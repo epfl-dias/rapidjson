@@ -165,20 +165,20 @@ IF (UNIX OR CYGWIN)
                   @ONLY)
   INSTALL (FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc
       DESTINATION "${LIB_INSTALL_DIR}/pkgconfig"
-      COMPONENT pkgconfig)
+      COMPONENT rapidjson-pkgconfig)
 ENDIF()
 
 install(FILES readme.md
         DESTINATION "${DOC_INSTALL_DIR}"
-        COMPONENT doc)
+        COMPONENT rapidjson-doc)
 
 install(DIRECTORY include/rapidjson
     DESTINATION "${INCLUDE_INSTALL_DIR}"
-    COMPONENT dev)
+    COMPONENT rapidjson-dev)
 
 install(DIRECTORY example/
     DESTINATION "${DOC_INSTALL_DIR}/examples"
-    COMPONENT examples
+    COMPONENT rapidjson-examples
     # Following patterns are for excluding the intermediate/object files
     # from an install of in-source CMake build.
     PATTERN "CMakeFiles" EXCLUDE
@@ -223,4 +223,4 @@ INSTALL(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
     DESTINATION "${CMAKE_INSTALL_DIR}"
-    COMPONENT dev)
+    COMPONENT rapidjson-dev)
